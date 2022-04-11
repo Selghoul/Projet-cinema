@@ -13,68 +13,68 @@
         </a>
       </div>
 
-      barBasicExample" class="navbar-menu">
-      <div class="navbar-start">  <div id="nav
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
 
           <a class="navbar-item">
-        <router-link to="/">Acceuil</router-link>
-        </a>
-
-        <a class="navbar-item">
-          <router-link to="/recherche">Recherche</router-link>
-        </a>
-
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            More
+            <router-link to="/">Acceuil</router-link>
           </a>
 
+          <a class="navbar-item">
+            <router-link to="/recherche">Recherche</router-link>
+          </a>
 
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
+            </a>
+
+
+          </div>
         </div>
+
+
       </div>
-
-
-  </div>
-  </nav>
-  <router-link to="/">Acceuil</router-link> |
-  <router-link to="/recherche">Recherche</router-link>
+    </nav>
+    <router-link to="/">Acceuil</router-link> |
+    <router-link to="/recherche">Recherche</router-link>
   </div>
   <router-view/>
 
 </template>
 
 <script>
-  export default {
-    name: 'App',
-    methods : {
-      getList(){
-        this.axios.get(api).then((response) => {
-          console.log(response.data)
-        })
-      }
+export default {
+  name: 'App',
+  methods : {
+    getList(){
+      this.axios.get(api).then((response) => {
+        console.log(response.data)
+      })
     }
   }
+}
 </script>
 
 <style>
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-  }
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
-  #nav {
-    padding: 30px;
-  }
+#nav {
+  padding: 30px;
+}
 
-  #nav a {
-    font-weight: bold;
-    color: #2c3e50;
-  }
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
 
-  #nav a.router-link-exact-active {
-    color: #42b983;
-  }
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>
