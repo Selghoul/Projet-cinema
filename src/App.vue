@@ -16,11 +16,11 @@
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
 
-          <a class="navbar-item">
+          <a class="navbar-item1">
             <a href = "//ugc.fr">Acceuil</a>
           </a>
 
-          <a class="navbar-item">
+          <a class="navbar-item1">
             <router-link to="/recherche">Recherche</router-link>
           </a>
 
@@ -69,14 +69,32 @@ export default {
 #nav {
   padding: 30px;
   background-color: #42b983;
-}
+  margin: 10px;
+  position: relative;}
 
 #nav a {
   font-weight: bold;
   color: #2c3e50;
+  margin-top: 5px;
+  font-size: 20px;
+  text-decoration: none;
+
+
 }
 
 #nav a.router-link-exact-active {
   color: #FFFFFF;
 }
+
+
+
+.navbar-item1{
+  border-radius: 20px;
+  background-color: #379468;
+  margin: 30px ;
+  padding: 5px 15px 5px 15px ;
+}
+  .navbar-brand{
+    margin-bottom: 25px;
+  }
 </style>

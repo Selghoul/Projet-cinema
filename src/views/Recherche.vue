@@ -4,9 +4,9 @@
       <div className="input-group">
 
         <label>Recherche</label>
-        <input type="text" v-model="uneRecherche">
+        <input class="bouttonRecherche1" type="text" v-model="uneRecherche">
 
-        <button v-on:click="recherche">search</button>
+        <button class="bouttonRecherche" v-on:click="recherche">search </button>
       </div>
     </form>
     <br/>
@@ -17,11 +17,12 @@
     <br/>
     <table>
       <tr v-for="unFilm in films" v-bind:key="unFilm.key">
-        <td>{{ unFilm.title }}</td>
+        <td class="titreFilm">{{ unFilm.title }}</td> <br>
         <td v-if="unFilm.poster_path!=null" width='200px'>
           <img v-bind:src="'http://image.tmdb.org/t/p/w500' +unFilm.poster_path" ></td>
+        <br>
         <td>
-          <button v-on:click="voirDetails(unFilm)"> Détails</button>
+          <button class="bouttonDetails" v-on:click="voirDetails(unFilm)"> Détails</button>
         </td>
       </tr>
     </table>
@@ -64,24 +65,59 @@ export default {
 </script>
 
 <style>
-.input-group {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-}
 
-.input-group-field {
-  margin-right: 0;
-}
 
-.input-group .input-group-button {
-  margin-left: 0;
-  border: none;
-}
 
-.input-group .md-raised {
-  margin-top: 0;
-  margin-bottom: 0;
-  border-radius: 0;
+  .bouttonDetails {
+    -webkit-border-radius: 28px;
+    -moz-border-radius: 28px;
+    border-radius: 28px;
+    -webkit-box-shadow: 0px 1px 3px #8f8f8f;
+    -moz-box-shadow: 0px 1px 3px #8f8f8f;
+    box-shadow: 0px 1px 3px #8f8f8f;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    background: #42b983;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+.bouttonDetails:hover {
+  background: #379468;
+  text-decoration: none;}
+
+  .titreFilm{
+    font-family: "Open Sans";
+    font-weight: bolder;
+    font-size: 20px;
+  }
+
+.bouttonRecherche {
+
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  border-radius: 28px;
+  -webkit-box-shadow: 0px 1px 3px #8f8f8f;
+  -moz-box-shadow: 0px 1px 3px #8f8f8f;
+  box-shadow: 0px 1px 3px #8f8f8f;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #42b983;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
 }
+.bouttonRecherche:hover {
+  background: #379468;
+  text-decoration: none;}
+
+  .bouttonRecherche1 {
+    margin: 30px 8px 0px 5px;
+    border-radius: 10px;
+    padding-top: 10px;
+    font-size: 20px;
+
+  }
+
+
 </style>

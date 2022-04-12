@@ -125,6 +125,8 @@
   .vote img {
     z-index: 1;
   }
+
+
 </style>
 
    <!-- <div class="content">
