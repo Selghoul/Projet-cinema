@@ -17,27 +17,28 @@
         <div class="navbar-start">
 
           <a class="navbar-item">
-            <router-link to="/">Acceuil</router-link>
+            <a href = "//ugc.fr">Acceuil</a>
           </a>
 
           <a class="navbar-item">
             <router-link to="/recherche">Recherche</router-link>
           </a>
 
+          <!--
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
-              More
+              <router- link to ="/More"> En savoir plus</router-link>
             </a>
 
 
-          </div>
+          </div>-->
+
         </div>
 
 
       </div>
     </nav>
-    <router-link to="/">Acceuil</router-link> |
-    <router-link to="/recherche">Recherche</router-link>
+
   </div>
   <router-view/>
 
@@ -67,6 +68,7 @@ export default {
 
 #nav {
   padding: 30px;
+  background-color: #42b983;
 }
 
 #nav a {
@@ -75,6 +77,6 @@ export default {
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #FFFFFF;
 }
 </style>

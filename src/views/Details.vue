@@ -24,12 +24,11 @@
 
       <!-- note utilisateurs  -->
       <h2>Note des utilisateurs</h2>
-      <div class="vote">
 
+      <div class="vote">
+        <img src="/star.png">
         <div class="vote_bck" v-bind:style="styles"></div>
       </div>
-      <!-- ajout de note   -->
-       <img src="../assets/star.png" height="500px" width="500px" >
       <b>{{(details.vote_average /2)}} / 5</b>
       <br>
       <i>Basé sur le vote de {{details.vote_count}} personnes.</i>
@@ -108,6 +107,25 @@
   }
 
 </script>
+
+<style>
+  .vote {
+    height: 50px;
+    width: 250px;
+    background-color: #0002;
+  }
+  .vote div {
+    top: -54px;
+    background-image: linear-gradient(#ffd318,#febc08);
+  }
+  .vote div, .vote img {
+    position: relative;
+    height: 50px;
+  }
+  .vote img {
+    z-index: 1;
+  }
+</style>
 
    <!-- <div class="content">
       <h3>{{film.titre}}</h3>
