@@ -34,6 +34,17 @@
       <i>Basé sur le vote de {{details.vote_count}} personnes.</i>
       <br><br>
       <div class="hr"></div>
+<!--commentaire film-->
+      <div class="avis">
+
+        <div v-for='review in reviews.results' v-bind:key="review.key">
+          <img v-bind:src=review.author_details.avatar_path>
+          <b> {{review.author}} </b>
+          <p>  {{review.content}}</p>
+
+        </div>
+
+      </div>
 
       <h2>Casting</h2>
       <table class="cast" v-for='credit in credits.cast' v-bind:key="credit.key">
@@ -62,9 +73,12 @@
 </template>
 
 <script>
+  // appeler une librairie
   import axios from 'axios'
+  //
   export default{
     name: 'Details',
+
     data: () => ({
       baseUrl: 'https://api.themoviedb.org/3',
       api_key: '9021264f48ddf90a2c1bf9c58af5d837',
@@ -75,16 +89,19 @@
       load: true,
     }),
     methods: {
+      //
       async getdetails() {
         const response = await axios.get(this.baseUrl + '/movie/' + this.film.id + '?language=fr&api_key=' + this.api_key);
+        // https://api.themoviedb.org/3/movie/753453?language=fr&api_key=9021264f48ddf90a2c1bf9c58af5d837
         this.details = await response.data;
       },
       async getcredits() {
         const response = await axios.get(this.baseUrl + '/movie/' + this.film.id + '/credits?language=fr&api_key=' + this.api_key);
+       //  https://api.themoviedb.org/3/movie/414906/credits?language=fr&api_key=9021264f48ddf90a2c1bf9c58af5d837
         this.credits = await response.data;
       },
       async getreviews() {
-        const response = await axios.get(this.baseUrl + '/movie/' + this.film.id + '/reviews?language=fr&api_key=' + this.api_key);
+        const response = await axios.get(this.baseUrl + '/movie/' + this.film.id + '/reviews?api_key=' + this.api_key);
         this.reviews = await response.data;
       }
     },
@@ -96,6 +113,7 @@
       this.getdetails();
       this.getcredits();
       this.load = false;
+      this.getreviews();
     },
     computed: {
       styles: function() {
